@@ -27,11 +27,12 @@ This avoids issues where, for example, `2` would otherwise appear after `20` in 
 - **Purpose:** alignment, sorting, and clarity.
 
 Examples
-```
-'00002' = 2
-'00020' = 20
-'01223' = 1223
-```
+| Flare encoding | Value |
+|----------------|-------|
+| `00002`        | 2     |
+| `00020`        | 20    |
+| `01223`        | 1223  |
+
 ---
 
 ## 2. Real numbers
