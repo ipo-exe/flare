@@ -90,14 +90,10 @@ Flare uses **magnitude multiplier flags** as **suffixes** to numbers, separate f
 
 - Multipliers are **optional** and **case-insensitive**, allowing consistent scaling in numeric encoding.
 
----
-
-By combining **integer numbers, real numbers, signals, and magnitude multipliers**, Flare can encode **precise, scaled, and directional numerical information** in a text-based label format that is fully consistent with its principles.
-
 Examples
 | Flare encoding | Value        |
 |----------------|--------------|
-| `s02p3k`       | -2,300.0     |
-| `23p44c`       | +2,344.0     |
+| `02p3k`        | 2,300.0     |
+| `23p44c`       | 2,344.0     |
 | `W05P0M`       | -5,000,000.0 |
 
