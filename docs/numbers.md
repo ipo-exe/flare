@@ -26,6 +26,12 @@ This avoids issues where, for example, `2` would otherwise appear after `20` in 
 - **Format:** zero-filled integers of fixed length.  
 - **Purpose:** alignment, sorting, and clarity.
 
+Examples
+```
+'00002' = 2
+'00020' = 20
+'01223' = 1223
+```
 ---
 
 ## 2. Real numbers
@@ -37,12 +43,18 @@ This allows precise numerical values to be encoded without violating the text-on
 - **Format:** `[integer]p[decimals]`  
 - **Purpose:** represent fractional values in a fully text-compatible way.
 
+Examples
+| Flare encoding | Value |
+|----------------|-------|
+| `002p3`        | 2.3   |
+| `023p4`        | 23.4  |
+| `125p0`        | 125.0 |
+
 ---
 
 ## 3. Signal prefix
 
-In some contexts, numbers need to convey **direction, polarity, or orientation**, such as in georeferencing or coordinate systems.  
-Flare uses **signal flags**, which are letters placed at the **beginning of a number**, to indicate whether it is positive or negative.  
+By default, Flare assumes the signal of a number is **positive**. But in some contexts, numbers need to convey **direction, polarity, or orientation**, such as in georeferencing or coordinate systems. For this, Flare uses **signal flags**, which are letters placed at the **beginning of a number**, to indicate whether it is positive or negative.  
 
 | Prefix | Signal    | Quadrant |
 |--------|-----------| -------- |
@@ -53,15 +65,23 @@ Flare uses **signal flags**, which are letters placed at the **beginning of a nu
 
 - Signal flags are **case-insensitive** and are always **prefixes to the numeric value**.
 
+Examples
+| Flare encoding | Value   |
+|----------------|---------|
+| `S002p3`       | -2.3    |
+| `N023p4`       | +23.4   |
+| `w125p0`       | -125.0  |
+
 ---
 
 ## 4. Magnitude suffix
 
-Sometimes, it is necessary to indicate that a number should be interpreted with a **scale or multiplier**, such as hundreds or thousands.  
+By default, Flare assumes the multiplier of a number is 1. Sometimes, it is necessary to indicate that a number should be interpreted with a **scale or multiplier**, such as hundreds or thousands.  
 Flare uses **magnitude multiplier flags** as **suffixes** to numbers, separate from signals, to encode this information.
 
 | Suffix | Multiplier        |
 |------|-----------------|
+| `d`  | tens (×10)  |
 | `c`  | hundreds (×100)  |
 | `k`  | thousands (×1,000) |
 | `m`  | millions (×1,000,000) |
@@ -73,4 +93,10 @@ Flare uses **magnitude multiplier flags** as **suffixes** to numbers, separate f
 
 By combining **integer numbers, real numbers, signals, and magnitude multipliers**, Flare can encode **precise, scaled, and directional numerical information** in a text-based label format that is fully consistent with its principles.
 
+Examples
+| Flare encoding | Value        |
+|----------------|--------------|
+| `s02p3k`       | -2,300.0     |
+| `23p44c`       | +2,344.0     |
+| `W05P0M`       | -5,000,000.0 |
 
