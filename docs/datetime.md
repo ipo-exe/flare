@@ -102,10 +102,10 @@ The timerange is simply a concatenation of two timestamps denoting the interval.
 ```
 
 Where:
-- `timestamp_start` is the starting time of the interval (inclusive);
-- `timestamp_stop` is the stopping time of the interval (exclusive).
+- `timestamp_start` is the starting time of the interval (inclusive lower limit);
+- `timestamp_stop` is the stopping time of the interval (exclusive upper limit).
 
-> Note: by ending time means exclusive means that at that moment the timerange is no longer valid.
+> Note: by exclusive upper limit Flare means that at that moment the timerange is no longer valid.
 > Hence, in a timerange of `2020u2030` the year 2030 is not included.
 
 ### Examples of Timeranges
