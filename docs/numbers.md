@@ -27,7 +27,7 @@ This avoids issues where, for example, `2` would otherwise appear after `20` in 
 - **Purpose:** alignment, sorting, and clarity.
 
 Examples
-| Flare encoding | Value |
+| Encoded           | Decoded                        |
 |----------------|-------|
 | `00002`        | 2     |
 | `00020`        | 20    |
@@ -45,7 +45,7 @@ This allows precise numerical values to be encoded without violating the text-on
 - **Purpose:** represent fractional values in a fully text-compatible way.
 
 Examples
-| Flare encoding | Value |
+| Encoded           | Decoded                        |
 |----------------|-------|
 | `002p3`        | 2.3   |
 | `023p4`        | 23.4  |
@@ -67,7 +67,7 @@ By default, Flare assumes the signal of a number is **positive**. But in some co
 - Signal flags are **case-insensitive** and are always **prefixes to the numeric value**.
 
 Examples
-| Flare encoding | Value   |
+| Encoded           | Decoded                        |
 |----------------|---------|
 | `S002p3`       | -2.3    |
 | `N023p4`       | +23.4   |
@@ -91,7 +91,7 @@ Flare uses **magnitude multiplier flags** as **suffixes** to numbers, separate f
 - Multipliers are **optional** and **case-insensitive**, allowing consistent scaling in numeric encoding.
 
 Examples
-| Flare encoding | Value        |
+| Encoded           | Decoded                        |
 |----------------|--------------|
 | `02p3k`        | 2,300.0     |
 | `23p44c`       | 2,344.0     |
