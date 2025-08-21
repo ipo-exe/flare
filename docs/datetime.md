@@ -4,7 +4,9 @@ Date and time are fundamental dimensions in Flare, since nearly all domains of f
 To cover different use cases, Flare provides two main categories of temporal encoding:
 
 - **Timestamps** 
-- **Timeranges** represent explicit intervals between a start and end point. These are used when the temporal span must be explicitly delimited.
+- **Timeranges**
+
+> See also the Flare system for [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md).
 
 ## Timestamps
 
@@ -50,8 +52,6 @@ Where:
 - month (`MM`) = 2 digits integer number;
 - day (`DD`)= 2 digits integer number.
 
->> [!tip] See the Flare system for Numbers.
-
 ### Time subcomponents
 
 The time componment is encoded as the following subcomponents:
@@ -66,7 +66,7 @@ hours and minutes are always 2 digits integers. Seconds have at least 2 digits b
 
 ### Zone subcomponents
 
-The zone component is a timezone offset from [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), followed by a signal (`w/e` or `s/n`) and an offset in `{hour}{minute}`.
+The zone component is a timezone offset from [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time). It has a signal prefix (`w/e` or `s/n`) and an offset in `{hour}{minute}`.
 ```
 {signal}{hour}{minute} = shhmmss
 ```
@@ -79,9 +79,42 @@ and in the subcomponents of **date** to improve readability:
 YYYY-MM-DD-thhmmss-zshhmm
 ```
 
- ``
-
 ### Examples of timestamps
 
-| Flare encoding | Value
-`20140302T124804P143ZW0300` | 2014-03-02 12:48:04.143 -03:00 |
+| Flare Encoding            | Value                          |
+|----------------------------|--------------------------------|
+| `20140302t124804p143zw0300` | 2014-03-02 12:48:04.143 -03:00 |
+| `20140302t124804`          | 2014-03-02 12:48:04 (no zone)  |
+| `20140302`                 | 2014-03-02 (daily)            |
+| `201403`                   | 2014-03 (monthly)             |
+| `2014`                     | 2014 (yearly)                 |
+
+
+## Timeranges
+
+**Timeranges** represent any arbitrary interval between a start and end point in the timeline. These are used when the temporal span must be explicitly delimited.
+
+### Structure
+
+The timerange is simply a concatenation of two timestamps denoting the interval. The flag for separator is the `u` letter, denoting the "union":
+```
+{timestamp_start}u{timestamp_stop}
+```
+
+Where:
+- `timestamp_start` is the starting time of the interval (inclusive);
+- `timestamp_stop` is the stopping time of the interval (exclusive).
+
+> Note: by ending time means exclusive means that at that moment the timerange is no longer valid.
+> Hence, in a timerange of `2020u2030` the year 2030 is not included.
+
+### Examples of Timeranges
+
+| Flare Encoding                                | Value (Interval)                          |
+|-----------------------------------------------|-------------------------------------------|
+| `20140302t124804u20140302t134804`             | 2014-03-02 12:48:04 → 2014-03-02 13:48:04 |
+| `20140302u20140305`                           | 2014-03-02 → 2014-03-05 (daily interval)  |
+| `2014-03u2014-04`                               | 2014-03 → 2014-04 (monthly interval)      |
+| `2014U2015`                                   | 2014 → 2015 (yearly interval)             |
+| `20140302t124804p143zw0300u20140302t134804zw0300` | 2014-03-02 12:48:04.143 -03:00 → 2014-03-02 13:48:04 -03:00 |
+
