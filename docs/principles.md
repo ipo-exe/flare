@@ -36,7 +36,7 @@ Even when metadata exists inside the asset (e.g., EXIF in images, metadata in PD
 Every label is a **plain text string** in [ASCII](https://www.ascii-code.com/) format, built from a restricted character set.  
 
 - Allowed characters:  
-  - **Letters**: `abcefghijklmnopqrstuvxywz`  
+  - **Letters**: `abcdefghijklmnopqrstuvxywz`  
   - **Numbers**: `0123456789`  
   - **Underscore:** `_`
   - **Hyphen: `-` (secondary use only, see below)
