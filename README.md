@@ -12,6 +12,12 @@ It provides conventions and notations for labeling files, database fields, table
 - Python modules included for programmatic support.  
 - Markdown documentation for clarity and accessibility.
 
+# Contents
+
+- [Principles](https://github.com/ipo-exe/flare/blob/main/docs/principles.md)
+- [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md)
+- [Date and Time](https://github.com/ipo-exe/flare/blob/main/docs/datetime.md)
+
 ## Repository structure
 
 ```bash
@@ -24,11 +30,5 @@ flare/
 ```
 
 ---
-
-# Overview
-
-- [Principles](https://github.com/ipo-exe/flare/blob/main/docs/principles.md)
-- [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md)
-- [Date and Time](https://github.com/ipo-exe/flare/blob/main/docs/datetime.md)
 
 
