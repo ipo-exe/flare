@@ -54,14 +54,14 @@ This ensures **cross-platform portability** and avoids naming issues in operatin
 
 Separation of information in a label follows a **hierarchical system of delimiters**:
 
-- **Underscore (`_`)** is the **universal separator**.  
+- **Underscore** `_` is the **universal separator**.  
   - It is used to split the **primary chunks of information** in the label.  
   - Example:  
     ```
     {info1}_{info2}_{info3}_{info4}
     ```
 
-- **Hyphen (`-`)** is the **secondary separator**.  
+- **Hyphen** `-` is the **secondary separator**.  
   - It applies only in specific cases, such as breaking down a chunk into finer parts.  
   - It is optional and sometimes prohibited (e.g., in database field names).  
   - Example:  
@@ -69,13 +69,10 @@ Separation of information in a label follows a **hierarchical system of delimite
     {info1}_{info2}_{info3a-info3b}_{info4}
     ```
 
-- **Reserved letters** may act as **symbolic separators** when encoding certain information.  
+- **Reserved letters** may act as **flag separators** when encoding certain information.  
   - These letters replace special characters that are otherwise prohibited.  
   - Example:  
-    - `P` (for "point" / "period") to encode decimals:  
-      ```
-      {info1}_36P5_{info3)
-      ```
+    - `P` to encode decimals separator `.`.  
     - Other reserved letters may be defined for domain-specific conventions.  
 
 This system ensures that labels are **unambiguous, consistent, and easy to parse**, while still allowing flexibility for specialized encodings.
