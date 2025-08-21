@@ -10,7 +10,7 @@ These principles ensure that labels are **robust, consistent, human-readable, an
 | Stand-alone information  | Labels must encode essential information                                  | `project_dataset_2025_v2`                |
 | Text-based               | Only ASCII letters, numbers, `_`, and `-` allowed                         | `experiment_trial_01`                    |
 | Hierarchy and separators | `_` = primary separator, `-` = secondary, reserved letters for edge cases | `temperature_36P5_celsius`               |
-| Case-insensitive         | Casing has no effect; all labels normalized to lowercase                  | `DATASET_V2` ≡ `dataset_v2` ≡ `Dataset_V2` |
+| Case-insensitive         | Casing has no effect; all labels are parsed as lowercase                  | `DATASET_V2` ≡ `dataset_v2` ≡ `Dataset_V2` |
 
 
 ---
@@ -83,7 +83,7 @@ This system ensures that labels are **unambiguous, consistent, and easy to parse
 
 Flare is a **case-insensitive system**.  
 
-- A label is considered the **same**, regardless of whether it is written in lowercase, uppercase, camelCase, or any other casing convention.  
+- A label is considered the **same**, regardless of whether it is written in lowercase, UPPERCASE, camelCase, or any other casing style.  
 - Internally, Flare normalizes all labels to **lowercase** (snakecase) for retrieval, formatting, and automated processes.  
 - Non-snakecase are optional for convencience (human-readability) sometimes prohibited (e.g., in database field names).
 - Every unique label is therefore **case-insensitive** by definition.
