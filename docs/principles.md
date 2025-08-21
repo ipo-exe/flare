@@ -22,7 +22,7 @@ These principles make Flare a **portable, consistent, and extensible system** fo
 ## 1. Stand-alone information
 
 Labels must encode **stand-alone information** relevant for identification and retrieval.  
-Even when metadata exists inside the asset (e.g., EXIF in images, metadata in PDFs, georeferencing in rasters), the **label itself must carry enough descriptive information**.
+Even when metadata exists inside the asset (e.g., EXIF in images, metadata in PDFs, etc), the **label itself must carry enough descriptive information**.
 
 - A label should be readable by a human without opening the file.  
 - A script should be able to retrieve or filter assets **based only on the label**.  
@@ -33,13 +33,13 @@ Even when metadata exists inside the asset (e.g., EXIF in images, metadata in PD
 
 ## 2. Text-based
 
-Every label is a **plain text string**, built from a restricted character set.  
+Every label is a **plain text string** in [ASCII](https://www.ascii-code.com/) format, built from a restricted character set.  
 
 - Allowed characters:  
-  - **Letters** (`A–Z`, `a–z`)  
-  - **Numbers** (`0–9`)  
-  - **Underscore (`_`)**  
-  - **Hyphen (`-`)** (secondary use only, see below)
+  - **Letters**: `abcefghijklmnopqrstuvxywz`  
+  - **Numbers**: `0123456789`  
+  - **Underscore:** `_`
+  - **Hyphen: `-` (secondary use only, see below)
 
 - Prohibited characters:  
   - All other ASCII special characters (`. , : ; ! ? @ # $ % & * + = / \ | [ ] { } ( ) ^ ~ ' "`)  
