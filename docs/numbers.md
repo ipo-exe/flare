@@ -1,4 +1,4 @@
-# Flare — Numbers
+# Numbers
 
 Numbers are a **core component** of Flare labels and are present in nearly every type of label.  
 They must be encoded in a **text-based, consistent, and unambiguous format**, ensuring that labels are sortable, readable, and machine-actionable.  
