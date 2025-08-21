@@ -27,6 +27,7 @@ flare/
 
 # Overview
 
-
+- [Principles](https://github.com/ipo-exe/flare/blob/main/docs/principles.md)
+- [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md)
 
 
