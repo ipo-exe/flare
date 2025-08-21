@@ -3,8 +3,6 @@
 **Flare** — *Formatting Labels for Archive and Retrieval Efficiency* — is a lightweight, text-based system for creating and managing standardized labels.  
 It provides conventions and notations for labeling files, database fields, table columns, and other assets, making them easier to organize, archive, and retrieve.
 
----
-
 ## Features
 
 - Text-based system simple, portable, and human-readable.  
@@ -13,8 +11,6 @@ It provides conventions and notations for labeling files, database fields, table
 - Extensible design: embraces sub-branches for domain-specific adaptations.  
 - Python modules included for programmatic support.  
 - Markdown documentation for clarity and accessibility.
-
----
 
 ## Repository structure
 
@@ -30,5 +26,7 @@ flare/
 ---
 
 # Overview
+
+
 
 
