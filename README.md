@@ -29,5 +29,6 @@ flare/
 
 - [Principles](https://github.com/ipo-exe/flare/blob/main/docs/principles.md)
 - [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md)
+- [Date and Time](https://github.com/ipo-exe/flare/blob/main/docs/datetime.md)
 
 
