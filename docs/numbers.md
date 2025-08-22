@@ -16,7 +16,7 @@ Flare provides a structured approach to encoding **integer numbers, real numbers
 
 ---
 
-## 1. Integer numbers
+## Integers
 
 Integer numbers are the most basic form of numerical encoding in Flare.  
 They are used to represent counts, indices, or sequential identifiers.  
@@ -35,7 +35,7 @@ Examples
 
 ---
 
-## 2. Real numbers
+## Fractions
 
 Real numbers extend the integer format by allowing **decimal fractions**.  
 Because certain characters, like the period (`.`), are prohibited in labels, Flare uses the **letter `p` as a decimal separator**.  
@@ -53,7 +53,7 @@ Examples
 
 ---
 
-## 3. Signal prefix
+## Signal
 
 By default, Flare assumes the signal of a number is **positive**. But in some contexts, numbers need to convey **direction, polarity, or orientation**, such as in georeferencing or coordinate systems. For this, Flare uses **signal flags**, which are letters placed at the **beginning of a number**, to indicate whether it is positive or negative.  
 
@@ -75,7 +75,7 @@ Examples
 
 ---
 
-## 4. Magnitude suffix
+## Magnitude
 
 By default, Flare assumes the multiplier of a number is 1. Sometimes, it is necessary to indicate that a number should be interpreted with a **scale or multiplier**, such as hundreds or thousands.  
 Flare uses **magnitude multiplier flags** as **suffixes** to numbers, separate from signals, to encode this information.
