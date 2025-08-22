@@ -39,7 +39,7 @@ Every label is a **plain text string** in [ASCII](https://www.ascii-code.com/) f
   - **Letters**: `abcdefghijklmnopqrstuvxywz`  
   - **Numbers**: `0123456789`  
   - **Underscore:** `_`
-  - **Hyphen: `-` (secondary use only, see below)
+  - **Hyphen**: `-`
 
 - Prohibited characters:  
   - All other ASCII special characters (`. , : ; ! ? @ # $ % & * + = / \ | [ ] { } ( ) ^ ~ ' "`)  
