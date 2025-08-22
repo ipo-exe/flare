@@ -1,7 +1,6 @@
 # Date and Time
 
-Date and Time (**datetime**) is a fundamental **domain** in Flare, since nearly all other domains of asset labeling require temporal reference.
-To cover different use cases, Flare provides two main **subdomains** of temporal encoding:
+Date and Time (**datetime**) is a fundamental feature in Flare, since nearly most labels require temporal reference. To cover different use cases, Flare provides two main **domains** of temporal encoding:
 
 - **Timestamps** -- instant records of the timeline.
 - **Timeranges** -- arbitrary time interval of the timeline.
@@ -10,7 +9,7 @@ To cover different use cases, Flare provides two main **subdomains** of temporal
 
 ## Summary
 
-| Subdomain    | Structure / Signature            | Example Encoded                       | Example Decoded                         |
+| Domain    | Structure / Signature            | Example Encoded                       | Example Decoded                         |
 |-------------|----------------------------------|---------------------------------------|-----------------------------------------|
 | Timestamp   | YYYY[MM[DD[thhmmss[zshhmm]]]]    | 20140302t124804zw0300                 | 2014-03-02 12:48:04 -03:00              |
 | Timerange   | {timestamp_start}u{timestamp_stop} | 20140302u20140305                     | 2014-03-02 → 2014-03-05 (end excl.)     |
@@ -20,7 +19,7 @@ To cover different use cases, Flare provides two main **subdomains** of temporal
 
 The literal flags of datetime are summarised below:
 
-| Flag        | Domain     | Subdomain | Meaning                                     |
+| Flag        | Feature    | Domain    | Meaning                                     |
 |-------------|------------|-----------|---------------------------------------------|
 |`t`          | Datetime   | Timestamp | Separator of date and time |
 |`z`          | Datetime   | Timestamp | Separator of time and zone |
@@ -48,7 +47,7 @@ The table below show all variants of timestamps.
 
 ### Structure
 
-The structure of a **full timestamp** is composed of three main components:
+The structure of a **full timestamp** is composed of three main subdomains:
 
 ```
 {date}t{time}z{zone}
@@ -57,7 +56,7 @@ The structure of a **full timestamp** is composed of three main components:
 The **time** is separated from **date** by the flag `t`. The **zone** is separated from **time** by the flag `z`.
 
 ### Date
-The date component is encoded as the following subcomponents:
+The date subdomain is encoded as the following components:
 
 ```
 {year}{month}{day} = YYYYMMDD
@@ -69,7 +68,7 @@ Where:
 
 ### Time
 
-The time componment is encoded as the following subcomponents:
+The time subdomain is encoded as the following components:
 ```
 {hour}{minute}{second} = hhmmss
 ```
@@ -81,7 +80,7 @@ hours and minutes are always 2 digits integers. Seconds have at least 2 digits b
 
 ### Zone
 
-The zone component is a timezone offset from [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time). It has a [signal prefix](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md#signal) (`w/e` or `s/n`) and an offset in `{hour}{minute}`.
+The zone subdomain is a timezone offset from [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time). It has a [signal prefix](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md#signal) (`w/e` or `s/n`) and an offset in `{hour}{minute}`.
 ```
 {signal}{hour}{minute} = shhmmss
 ```
