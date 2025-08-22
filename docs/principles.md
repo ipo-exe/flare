@@ -9,7 +9,7 @@ These principles ensure that labels are **robust, consistent, human-readable, an
 |--------------------------|---------------------------------------------------------------------------|------------------------------------------|
 | Stand-alone information  | Labels must encode essential information                                  | `project_dataset_2025_v2`                |
 | Text-based               | Only ASCII letters, numbers, `_`, and `-` allowed                         | `experiment_trial_01`                    |
-| Hierarchy and separators | `_` = primary separator, `-` = secondary, reserved letters for edge cases | `temperature_36P5_celsius`               |
+| Hierarchy and separators | `_` = primary separator, `-` = secondary, character flags for edge cases | `temperature_36P5_celsius`               |
 | Case-insensitive         | Casing has no effect; all labels are parsed as lowercase                  | `DATASET_V2` ≡ `dataset_v2` ≡ `Dataset_V2` |
 
 
@@ -50,32 +50,39 @@ This ensures **cross-platform portability** and avoids naming issues in operatin
 
 ---
 
-## Hierarchy and separators
+## Hierarchy
 
-Separation of information **domains** in a label follows a **hierarchical system of delimiters**:
+Information in Flare is structured in a hierarchy of three levels:
+- 1. **domain**: major level of information;
+- 2. **subdomain**: minor level of information;
+  3. **component**: finer detail of information
 
-- **Underscore** `_` is the **universal separator**.  
-  - It is used to split the **primary domains of information** in the label.  
-  - Example:  
-    ```
-    {info1}_{info2}_{info3}_{info4}
-    ```
+Flare uses standard reserved characters for structuring information with separators and literal flags. This system ensures that labels are **unambiguous, consistent, and easy to parse**, while still allowing flexibility for specialized encodings. 
 
-- **Hyphen** `-` is the **secondary separator**.  
-  - It applies only in specific cases, such as breaking down a domain into finer parts of **subdomains**.  
-  - It is optional and sometimes prohibited (e.g., in database field names).  
-  - Example:  
-    ```
-    {info1}_{info2}_{info3a-info3b}_{info4}
-    ```
+### Underscore
 
-- **Reserved letters** may act as **literal flags** when encoding certain information.  
+Underscore `_` is the **domain separator**. It is used to split the **domains of information** in the label.  
+Example:  
+```
+{info1}_{info2}_{info3}_{info4}
+```
+
+### Hyphen
+
+Hyphen `-` is the **subdomain separator**.  It applies only in specific cases, such as breaking down a domain into finer parts of **subdomains**. It is optional and sometimes prohibited (e.g., in database field names).  
+Example:  
+```
+{info1}_{info2}_{info3a-info3b}_{info4}
+```
+
+### Flags
+Reserved characters may act as **literal flags** when encoding certain information.  
   - These letters replace special characters that are otherwise prohibited.  
-  - Example:  
-    - `P` to encode decimals separator `.`.  
-    - Other reserved letters may be defined for domain-specific conventions.  
+Example:  
+  - `P` to encode decimals separator `.`.  
+  - Other reserved letters may be defined for domain-specific conventions.  
 
-This system ensures that labels are **unambiguous, consistent, and easy to parse**, while still allowing flexibility for specialized encodings.
+
 
 ---
 
