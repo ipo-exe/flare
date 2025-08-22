@@ -11,7 +11,7 @@ To cover different use cases, Flare provides two main categories of temporal enc
 ## Timestamps
 
 A timestamp represent a precise record of a date and/or time.
-Timestamps are usually part of a **time series**, where each entry is valid until the next timestamp occurs.
+Timestamps are usually part of a **timeseries**, where each entry is valid until the next timestamp occurs.
 In this sense, the Flare system is mostly based on the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601).
 The table below show all variants of timestamps.
 
@@ -38,10 +38,10 @@ The structure of a **full timestamp** is composed of three main components:
 
 ### Flags
 
-The **time** is separated from **date** by the lowercase flag `t`.  
-The **zone** is separated from **time** by the lowercase flag `z`.
+The **time** is separated from **date** by the flag `t`.  
+The **zone** is separated from **time** by the flag `z`.
 
-### Date subcomponents
+### Date
 The date component is encoded as the following subcomponents:
 
 ```
@@ -52,7 +52,7 @@ Where:
 - month (`MM`) = 2 digits integer number;
 - day (`DD`)= 2 digits integer number.
 
-### Time subcomponents
+### Time
 
 The time componment is encoded as the following subcomponents:
 ```
@@ -66,7 +66,7 @@ hours and minutes are always 2 digits integers. Seconds have at least 2 digits b
 
 ### Zone subcomponents
 
-The zone component is a timezone offset from [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time). It has a signal prefix (`w/e` or `s/n`) and an offset in `{hour}{minute}`.
+The zone component is a timezone offset from [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time). It has a [signal prefix](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md#signal) (`w/e` or `s/n`) and an offset in `{hour}{minute}`.
 ```
 {signal}{hour}{minute} = shhmmss
 ```
@@ -79,7 +79,7 @@ and in the subcomponents of **date** to improve readability:
 YYYY-MM-DD-thhmmss-zshhmm
 ```
 
-### Examples of timestamps
+### Examples
 
 | Encoded           | Decoded                        |
 |----------------------------|--------------------------------|
@@ -108,7 +108,7 @@ Where:
 > Note: by exclusive upper limit Flare means that at that moment the timerange is no longer valid.
 > Hence, in a timerange of `2020u2030` the year 2030 is not included.
 
-### Examples of Timeranges
+### Examples
 
 | Encoded           | Decoded                        |
 |-----------------------------------------------|-------------------------------------------|
