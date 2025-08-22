@@ -14,16 +14,7 @@ Date and Time (**datetime**) is a fundamental feature in Flare, since nearly mos
 | Timestamp   | YYYY[MM[DD[thhmmss[zshhmm]]]]    | 20140302t124804zw0300                 | 2014-03-02 12:48:04 -03:00              |
 | Timerange   | {timestamp_start}u{timestamp_stop} | 20140302u20140305                     | 2014-03-02 → 2014-03-05 (end excl.)     |
 
-
-## Flags
-
-The literal flags of datetime are summarised below:
-
-| Flag        | Domain     | Subdomain    | Meaning                                     |
-|-------------|------------|-----------|---------------------------------------------|
-|`t`          | Timestamp  | Time  | Prefix for time notation |
-|`z`          | Timestamp  | Zone  | Prefix for zone notation |
-|`u`          | Timerange  | Stop  | Separator of timestamps    |
+---
 
 ## Timestamps
 
@@ -104,6 +95,7 @@ YYYY-MM-DD-thhmmss-zshhmm
 | `2014-03`                  | 2014-03 (monthly)              |
 | `2014`                     | 2014 (yearly)                  |
 
+---
 
 ## Timeranges
 
@@ -133,6 +125,16 @@ Where:
 | `2014U2015`                                       | 2014 → 2015 (yearly interval)             |
 | `20140302t124804p143zw0300u20140302t134804zw0300` | 2014-03-02 12:48:04.143 -03:00 → 2014-03-02 13:48:04 -03:00 |
 
+---
 
+## Flags
+
+The literal flags of datetime are summarised below:
+
+| Flag        | Domain     | Subdomain    | Meaning                                     |
+|-------------|------------|-----------|---------------------------------------------|
+|`t`          | Timestamp  | Time  | Prefix for time notation |
+|`z`          | Timestamp  | Zone  | Prefix for zone notation |
+|`u`          | Timerange  | Stop  | Separator of timestamps    |
 
 
