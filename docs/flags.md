@@ -2,7 +2,7 @@
 
 Literal flags are **reserved letters** that encode a meaning within the domain of information. For instance, `p` is the flag encoding decimal separator in Numbers:
 ```
-003p46 = 3.46
+'003p46' = 3.46
 ```
 
 ## Replacers
