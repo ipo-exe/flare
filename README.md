@@ -6,6 +6,7 @@ It provides conventions, notations and nomenclature for labeling files, layers, 
 ## Contents
 
 - [Principles](https://github.com/ipo-exe/flare/blob/main/docs/principles.md)
+- [Flags](https://github.com/ipo-exe/flare/blob/main/docs/flags.md)
 - [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md)
 - [Date and Time](https://github.com/ipo-exe/flare/blob/main/docs/datetime.md)
 
