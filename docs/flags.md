@@ -1,9 +1,18 @@
 # Flags
 
-Literal flags are **reserved letters** that encode a meaning within the domain of information. For instance, `p` is the flag encoding decimal separator in Numbers:
+Literal flags are **reserved characters** that encode a meaning within the domain of information. For instance, `p` is the flag encoding decimal separator in Numbers:
 ```
 '003p46' = 3.46
 ```
+## Separators
+
+### Domain
+
+As mentioned in principles, the domain separator is the underscore `_` character. It splits the domains in a label.
+
+### Subdomain
+
+As mentioned in principles, the subdomain separator is the hyphen `-` character. It splits the subdomains in a label domain.
 
 ## Replacers
 
@@ -23,11 +32,15 @@ The flag `z` is a replacer for any domain in an asset that unknown.
 
 ## Catalog
 
+See below the full catalog of flags in Flare.
+
 | Flag        | Domain     | Subdomain | Meaning                                     |
 |-------------|------------|-----------|---------------------------------------------|
-|`o`          | All  | x  | Replacer for obvious information |
-|`x`          | All  | x  | Replacer for not-apply |
-|`z`          | All  | x  | Replacer for unknown information    |
+|`_`          | x          | x         | Domain separator |
+|`-`          | All        | x         | Subdomain separator |
+|`o`          | All        | x         | Replacer for obvious information |
+|`x`          | All        | x         | Replacer for not-apply |
+|`z`          | All        | x         | Replacer for unknown information    |
 |`p`          | Number     | Fraction  | Decimal separator |
 |`w`          | Number     | Sign      | flag for negative sign or West quadrant     |
 |`s`          | Number     | Sign      | flag for negative sign or South quadrant     |
