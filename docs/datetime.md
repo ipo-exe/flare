@@ -2,8 +2,8 @@
 
 Date and Time (**datetime**) is a fundamental feature in Flare, since nearly most labels require temporal reference. To cover different use cases, Flare provides two main **domains** of temporal encoding:
 
-- **Timestamps** -- instant records of the timeline.
-- **Timeranges** -- arbitrary time interval of the timeline.
+- **Timestamp** -- instant records of the timeline.
+- **Epoch** -- arbitrary time interval of the timeline.
 
 > See also the Flare system for [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md).
 
@@ -12,15 +12,14 @@ Date and Time (**datetime**) is a fundamental feature in Flare, since nearly mos
 | Domain    | Structure / Signature            | Example Encoded                       | Example Decoded                         |
 |-------------|----------------------------------|---------------------------------------|-----------------------------------------|
 | Timestamp   | YYYY[MM[DD[thhmmss[zshhmm]]]]    | 20140302t124804zw0300                 | 2014-03-02 12:48:04 -03:00              |
-| Timerange   | {timestamp_start}u{timestamp_stop} | 20140302u20140305                     | 2014-03-02 → 2014-03-05 (end excl.)     |
+| Epoch   | {timestamp_start}u{timestamp_stop} | 20140302u20140305                     | 2014-03-02 → 2014-03-05 (end excl.)     |
 
 ---
 
-## Timestamps
+## Timestamp
 
-A timestamp represent a precise record of a date and/or time.
-Timestamps are usually part of a **timeseries**, where each entry is valid until the next timestamp occurs.
-In this sense, the Flare system is mostly based on the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601).
+A **timestamp** represent a precise record of a date and/or time. Timestamps are usually part of a **timeseries**, where each entry is valid until the next timestamp occurs. In this sense, the Flare system is mostly based on the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601).
+
 The table below show all variants of timestamps.
 
 | Variant          | Alias  | Signature                     | Length (chars) | Pattern    | 
@@ -97,13 +96,13 @@ YYYY-MM-DD-thhmmss-zshhmm
 
 ---
 
-## Timeranges
+## Epoch
 
-**Timeranges** represent any arbitrary interval between a start and end point in the timeline. These are used when the temporal span must be explicitly delimited.
+An **Epoch** represent any arbitrary interval between a start and end point in the timeline. These are used when the temporal span must be explicitly delimited.
 
 ### Structure
 
-The timerange is simply a concatenation of two timestamps denoting the interval. The flag for separator is the `u` letter, denoting the "union":
+The epoch is simply a concatenation of two timestamps denoting the interval. The flag for separator is the `u` letter, denoting the "union":
 ```
 {timestamp_start}u{timestamp_stop}
 ```
@@ -112,8 +111,8 @@ Where:
 - `timestamp_start` is the starting time of the interval (inclusive lower limit);
 - `timestamp_stop` is the stopping time of the interval (exclusive upper limit).
 
-> Note: by exclusive upper limit Flare means that at that moment the timerange is no longer valid.
-> Hence, in a timerange of `2020u2030` the year 2030 is not included.
+> Note: by exclusive upper limit Flare means that at that moment the epoch is no longer valid.
+> Hence, in an epoch of `2020u2030` the year 2030 is not included.
 
 ### Examples
 
@@ -135,6 +134,6 @@ The literal flags of datetime are summarised below:
 |-------------|------------|-----------|---------------------------------------------|
 |`t`          | Timestamp  | Time  | Prefix for time notation |
 |`z`          | Timestamp  | Zone  | Prefix for zone notation |
-|`u`          | Timerange  | Stop  | Separator of timestamps    |
+|`u`          | Epoch      | Stop  | Separator of timestamps    |
 
 
