@@ -53,9 +53,10 @@ This ensures **cross-platform portability** and avoids naming issues in operatin
 ## Hierarchy
 
 Information in Flare is structured in a hierarchy of three levels:
-- 1. **domain**: major level of information;
-- 2. **subdomain**: minor level of information;
-  3. **component**: finer detail of information
+
+1. **domain**: major level of information;
+2. **subdomain**: minor level of information;
+3. **component**: finer detail of information
 
 Flare uses standard reserved characters for structuring information with separators and literal flags. This system ensures that labels are **unambiguous, consistent, and easy to parse**, while still allowing flexibility for specialized encodings. 
 
