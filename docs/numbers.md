@@ -14,6 +14,23 @@ Flare provides a structured approach to encoding **integer numbers, real numbers
 | Signal (prefixes)    | flags `w`, `s`, `e`, `n`             | Case-insensitive; applied as prefixes  |
 | Magnitude (suffixes) | flags `c`, `k`, `m`, `b`             | Case-insensitive; applied as suffixes |
 
+## Flags
+
+The literal flags of numbers are summarised below:
+
+| Flag        | Domain     | Subdomain | Meaning                                     |
+|-------------|------------|-----------|---------------------------------------------|
+|`p`          | Number     | Fraction  | Decimal separator |
+|`w`          | Number     | Sign      | flag for negative sign or West quadrant     |
+|`s`          | Number     | Sign      | flag for negative sign or South quadrant     |
+|`e`          | Number     | Sign      | flag for negative sign or West quadrant     |
+|`n`          | Number     | Sign      | flag for negative sign or West quadrant     |
+|`d`          | Number     | Magnitude | Tens multiplier (x10)     |
+|`c`          | Number     | Magnitude | Hundreds multiplier (x100)     |
+|`k`          | Number     | Magnitude | Thousands multiplier (x1,000)     |
+|`m`          | Number     | Magnitude | Millions multiplier (x1,000,000)     |
+|`b`          | Datetime   | Timerange | Billions multiplier (x1,000,000,000)    |
+
 ---
 
 ## Integers
@@ -53,21 +70,21 @@ Examples
 
 ---
 
-## Signal
+## Sign
 
-By default, Flare assumes the signal of a number is **positive**. But in some contexts, numbers need to convey **direction, polarity, or orientation**, such as in georeferencing or coordinate systems. For this, Flare uses **signal flags**, which are letters placed at the **beginning of a number**, to indicate whether it is positive or negative.  
+By default, Flare assumes the sign of a number is **positive**. But in some contexts, numbers need to convey **direction, polarity, or orientation**, such as in georeferencing or coordinate systems. For this, Flare uses **signal flags**, which are letters placed at the **beginning of a number**, to indicate whether it is positive or negative.  
 
-| Prefix | Signal    | Quadrant |
+| Prefix | Sign      | Quadrant |
 |--------|-----------| -------- |
 | `w`    | negative  | West     |
 | `s`    | negative  | South    |
 | `e`    | positive  | East     |
 | `n`    | positive  | North    |
 
-- Signal flags are **case-insensitive** and are always **prefixes to the numeric value**.
+- Sign flags are **case-insensitive** and are always **prefixes to the numeric value**.
 
 Examples
-| Encoded           | Decoded                        |
+| Encoded        | Decoded                        |
 |----------------|---------|
 | `S002p3`       | -2.3    |
 | `N023p4`       | +23.4   |
