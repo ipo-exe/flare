@@ -55,5 +55,5 @@ See below the full catalog of flags in Flare.
 |`b`          | Number     | Magnitude | Suffix for billions multiplier (x1,000,000,000)    |
 |`t`          | Timestamp  | Time      | Prefix for time |
 |`z`          | Timestamp  | Zone      | Prefix for zone |
-|`u`          | Timerange  | Stop      | Prefix for stop timestamp    |
+|`u`          | Epoch      | Stop      | Prefix for stop timestamp    |
 
