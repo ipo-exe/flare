@@ -10,7 +10,7 @@ To cover different use cases, Flare provides two main **subdomains** of temporal
 
 ## Summary
 
-| Domain    | Structure / Signature            | Example Encoded                       | Example Decoded                         |
+| Subdomain    | Structure / Signature            | Example Encoded                       | Example Decoded                         |
 |-------------|----------------------------------|---------------------------------------|-----------------------------------------|
 | Timestamp   | YYYY[MM[DD[thhmmss[zshhmm]]]]    | 20140302t124804zw0300                 | 2014-03-02 12:48:04 -03:00              |
 | Timerange   | {timestamp_start}u{timestamp_stop} | 20140302u20140305                     | 2014-03-02 → 2014-03-05 (end excl.)     |
