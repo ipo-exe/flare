@@ -52,17 +52,17 @@ This ensures **cross-platform portability** and avoids naming issues in operatin
 
 ## Hierarchy and separators
 
-Separation of information in a label follows a **hierarchical system of delimiters**:
+Separation of information **domains** in a label follows a **hierarchical system of delimiters**:
 
 - **Underscore** `_` is the **universal separator**.  
-  - It is used to split the **primary chunks of information** in the label.  
+  - It is used to split the **primary domains of information** in the label.  
   - Example:  
     ```
     {info1}_{info2}_{info3}_{info4}
     ```
 
 - **Hyphen** `-` is the **secondary separator**.  
-  - It applies only in specific cases, such as breaking down a chunk into finer parts.  
+  - It applies only in specific cases, such as breaking down a domain into finer parts of **subdomains**.  
   - It is optional and sometimes prohibited (e.g., in database field names).  
   - Example:  
     ```
