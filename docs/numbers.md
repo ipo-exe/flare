@@ -14,23 +14,6 @@ Flare provides a structured approach to encoding **integer numbers, real numbers
 | Signal (prefixes)    | flags `w`, `s`, `e`, `n`             | Case-insensitive; applied as prefixes  |
 | Magnitude (suffixes) | flags `c`, `k`, `m`, `b`             | Case-insensitive; applied as suffixes |
 
-## Flags
-
-The literal flags of numbers are summarised below:
-
-| Flag        | Domain     | Subdomain | Meaning                                     |
-|-------------|------------|-----------|---------------------------------------------|
-|`p`          | Number     | Fraction  | Decimal separator |
-|`w`          | Number     | Sign      | flag for negative sign or West quadrant     |
-|`s`          | Number     | Sign      | flag for negative sign or South quadrant     |
-|`e`          | Number     | Sign      | flag for positive sign or East quadrant     |
-|`n`          | Number     | Sign      | flag for positive sign or North quadrant     |
-|`d`          | Number     | Magnitude | Tens multiplier (x10)     |
-|`c`          | Number     | Magnitude | Hundreds multiplier (x100)     |
-|`k`          | Number     | Magnitude | Thousands multiplier (x1,000)     |
-|`m`          | Number     | Magnitude | Millions multiplier (x1,000,000)     |
-|`b`          | Number     | Magnitude | Billions multiplier (x1,000,000,000)    |
-
 ---
 
 ## Integers
@@ -114,3 +97,21 @@ Examples
 | `23p44c`       | 2,344.0     |
 | `W05P0M`       | -5,000,000.0 |
 
+---
+
+## Flags
+
+The literal flags of numbers are summarised below:
+
+| Flag        | Domain     | Subdomain | Meaning                                     |
+|-------------|------------|-----------|---------------------------------------------|
+|`p`          | Number     | Fraction  | Decimal separator |
+|`w`          | Number     | Sign      | flag for negative sign or West quadrant     |
+|`s`          | Number     | Sign      | flag for negative sign or South quadrant     |
+|`e`          | Number     | Sign      | flag for positive sign or East quadrant     |
+|`n`          | Number     | Sign      | flag for positive sign or North quadrant     |
+|`d`          | Number     | Magnitude | Tens multiplier (x10)     |
+|`c`          | Number     | Magnitude | Hundreds multiplier (x100)     |
+|`k`          | Number     | Magnitude | Thousands multiplier (x1,000)     |
+|`m`          | Number     | Magnitude | Millions multiplier (x1,000,000)     |
+|`b`          | Number     | Magnitude | Billions multiplier (x1,000,000,000)    |
