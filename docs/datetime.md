@@ -19,11 +19,11 @@ Date and Time (**datetime**) is a fundamental feature in Flare, since nearly mos
 
 The literal flags of datetime are summarised below:
 
-| Flag        | Feature    | Domain    | Meaning                                     |
+| Flag        | Domain     | Subdomain    | Meaning                                     |
 |-------------|------------|-----------|---------------------------------------------|
-|`t`          | Datetime   | Timestamp | Separator of date and time |
-|`z`          | Datetime   | Timestamp | Separator of time and zone |
-|`u`          | Datetime   | Timerange | Separator of timestamps    |
+|`t`          | Timestamp  | Time  | Prefix for time notation |
+|`z`          | Timestamp  | Zone  | Prefix for zone notation |
+|`u`          | Timerange  | Stop  | Separator of timestamps    |
 
 ## Timestamps
 
@@ -53,7 +53,7 @@ The structure of a **full timestamp** is composed of three main subdomains:
 {date}t{time}z{zone}
 ```
 
-The **time** is separated from **date** by the flag `t`. The **zone** is separated from **time** by the flag `z`.
+The **time** subdomain is prefixed by the flag `t`. The **zone** subdomain prefixed by the flag `z`.
 
 ### Date
 The date subdomain is encoded as the following components:
