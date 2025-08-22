@@ -8,6 +8,24 @@ To cover different use cases, Flare provides two main **subdomains** of temporal
 
 > See also the Flare system for [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md).
 
+## Summary
+
+| Category    | Structure / Signature            | Example Encoded                       | Example Decoded                         |
+|-------------|----------------------------------|---------------------------------------|-----------------------------------------|
+| Timestamp   | YYYY[MM[DD[thhmmss[zshhmm]]]]    | 20140302t124804zw0300                 | 2014-03-02 12:48:04 -03:00              |
+| Timerange   | {timestamp_start}u{timestamp_stop} | 20140302u20140305                     | 2014-03-02 → 2014-03-05 (end excl.)     |
+
+
+## Flags
+
+The literal flags of datetime are summarised below:
+
+| Flag        | Domain     | Subdomain | Meaning                                     |
+|-------------|------------|-----------|---------------------------------------------|
+|`t`          | Datetime   | Timestamp | Separator of date and time |
+|`z`          | Datetime   | Timestamp | Separator of time and zone |
+|`u`          | Datetime   | Timerange | Separator of timestamps    |
+
 ## Timestamps
 
 A timestamp represent a precise record of a date and/or time.
@@ -116,15 +134,6 @@ Where:
 | `2014U2015`                                       | 2014 → 2015 (yearly interval)             |
 | `20140302t124804p143zw0300u20140302t134804zw0300` | 2014-03-02 12:48:04.143 -03:00 → 2014-03-02 13:48:04 -03:00 |
 
-## Flags
-
-The literal flags of datetime are summarised below:
-
-| Flag        | Domain     | Subdomain | Meaning                                     |
-|-------------|------------|-----------|---------------------------------------------|
-|`t`          | Datetime   | Timestamp | Separator of date and time |
-|`z`          | Datetime   | Timestamp | Separator of time and zone |
-|`u`          | Datetime   | Timerange | Separator of timestamps    |
 
 
 
