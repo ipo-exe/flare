@@ -1,6 +1,6 @@
 # Numbers
 
-Numbers are a **core component** of Flare labels and are present in nearly every type of label.  
+Numbers are a **core feature** of Flare labels and are present in nearly every type of label.  
 They must be encoded in a **text-based, consistent, and unambiguous format**, ensuring that labels are sortable, readable, and machine-actionable.  
 
 Flare provides a structured approach to encoding **integer numbers, real numbers, signals, and magnitude multipliers**. Each type has a specific role and format within a label.
@@ -29,7 +29,7 @@ The literal flags of numbers are summarised below:
 |`c`          | Number     | Magnitude | Hundreds multiplier (x100)     |
 |`k`          | Number     | Magnitude | Thousands multiplier (x1,000)     |
 |`m`          | Number     | Magnitude | Millions multiplier (x1,000,000)     |
-|`b`          | Datetime   | Timerange | Billions multiplier (x1,000,000,000)    |
+|`b`          | Number     | Magnitude | Billions multiplier (x1,000,000,000)    |
 
 ---
 
