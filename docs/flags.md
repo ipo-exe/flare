@@ -30,6 +30,8 @@ The flag `x` is a replacer for any domain in an asset that somehow not apply, li
 
 The flag `z` is a replacer for any domain in an asset that unknown.
 
+---
+
 ## Catalog
 
 See below the full catalog of flags in Flare.
