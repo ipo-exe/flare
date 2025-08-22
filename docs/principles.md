@@ -19,7 +19,7 @@ These principles make Flare a **portable, consistent, and extensible system** fo
 
 ---
 
-## 1. Stand-alone information
+## Stand-alone information
 
 Labels must encode **stand-alone information** relevant for identification and retrieval.  
 Even when metadata exists inside the asset (e.g., EXIF in images, metadata in PDFs, etc), the **label itself must carry enough descriptive information**.
@@ -31,7 +31,7 @@ Even when metadata exists inside the asset (e.g., EXIF in images, metadata in PD
 
 ---
 
-## 2. Text-based
+## Text-based
 
 Every label is a **plain text string** in [ASCII](https://www.ascii-code.com/) format, built from a restricted character set.  
 
@@ -50,7 +50,7 @@ This ensures **cross-platform portability** and avoids naming issues in operatin
 
 ---
 
-## 3. Hierarchy and separators
+## Hierarchy and separators
 
 Separation of information in a label follows a **hierarchical system of delimiters**:
 
@@ -69,7 +69,7 @@ Separation of information in a label follows a **hierarchical system of delimite
     {info1}_{info2}_{info3a-info3b}_{info4}
     ```
 
-- **Reserved letters** may act as **flag separators** when encoding certain information.  
+- **Reserved letters** may act as **literal flags** when encoding certain information.  
   - These letters replace special characters that are otherwise prohibited.  
   - Example:  
     - `P` to encode decimals separator `.`.  
@@ -79,7 +79,7 @@ This system ensures that labels are **unambiguous, consistent, and easy to parse
 
 ---
 
-## 4. Case-insensitivity
+## Case-insensitivity
 
 Flare is a **case-insensitive system**.  
 
