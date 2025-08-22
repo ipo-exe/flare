@@ -23,8 +23,8 @@ The literal flags of numbers are summarised below:
 |`p`          | Number     | Fraction  | Decimal separator |
 |`w`          | Number     | Sign      | flag for negative sign or West quadrant     |
 |`s`          | Number     | Sign      | flag for negative sign or South quadrant     |
-|`e`          | Number     | Sign      | flag for negative sign or West quadrant     |
-|`n`          | Number     | Sign      | flag for negative sign or West quadrant     |
+|`e`          | Number     | Sign      | flag for positive sign or East quadrant     |
+|`n`          | Number     | Sign      | flag for positive sign or North quadrant     |
 |`d`          | Number     | Magnitude | Tens multiplier (x10)     |
 |`c`          | Number     | Magnitude | Hundreds multiplier (x100)     |
 |`k`          | Number     | Magnitude | Thousands multiplier (x1,000)     |
