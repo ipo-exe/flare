@@ -1,10 +1,10 @@
 # Date and time
 
-Date and time are fundamental dimensions in Flare, since nearly all domains of file and asset labeling require temporal reference.
-To cover different use cases, Flare provides two main categories of temporal encoding:
+Date and time (**datetime**) is a fundamental **domain** in Flare, since nearly all other domains of asset labeling require temporal reference.
+To cover different use cases, Flare provides two main **subdomains** of temporal encoding:
 
-- **Timestamps** 
-- **Timeranges**
+- **Timestamps** -- instant records of the timeline.
+- **Timeranges** -- arbitrary time interval of the timeline.
 
 > See also the Flare system for [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md).
 
@@ -111,11 +111,23 @@ Where:
 
 ### Examples
 
-| Encoded           | Decoded                        |
-|-----------------------------------------------|-------------------------------------------|
-| `20140302t124804u20140302t134804`             | 2014-03-02 12:48:04 → 2014-03-02 13:48:04 |
-| `20140302u20140305`                           | 2014-03-02 → 2014-03-05 (daily interval)  |
-| `2014-03u2014-04`                               | 2014-03 → 2014-04 (monthly interval)      |
-| `2014U2015`                                   | 2014 → 2015 (yearly interval)             |
+| Encoded                                           | Decoded                                   |
+|---------------------------------------------------|-------------------------------------------|
+| `20140302t124804u20140302t134804`                 | 2014-03-02 12:48:04 → 2014-03-02 13:48:04 |
+| `20140302u20140305`                               | 2014-03-02 → 2014-03-05 (daily interval)  |
+| `2014-03u2014-04`                                 | 2014-03 → 2014-04 (monthly interval)      |
+| `2014U2015`                                       | 2014 → 2015 (yearly interval)             |
 | `20140302t124804p143zw0300u20140302t134804zw0300` | 2014-03-02 12:48:04.143 -03:00 → 2014-03-02 13:48:04 -03:00 |
+
+## Flags
+
+The literal flags of datetime are summarised below:
+
+| Flag        | Domain     | Subdomain | Meaning                                     |
+|-------------|------------|-----------|---------------------------------------------|
+|`t`          | Datetime   | Timestamp | Separator of date and time |
+|`z`          | Datetime   | Timestamp | Separator of time and zone |
+|`u`          | Datetime   | Timerange | Separator of timestamps    |
+
+
 
