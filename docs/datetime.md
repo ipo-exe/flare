@@ -36,10 +36,7 @@ The structure of a **full timestamp** is composed of three main components:
 {date}t{time}z{zone}
 ```
 
-### Flags
-
-The **time** is separated from **date** by the flag `t`.  
-The **zone** is separated from **time** by the flag `z`.
+The **time** is separated from **date** by the flag `t`. The **zone** is separated from **time** by the flag `z`.
 
 ### Date
 The date component is encoded as the following subcomponents:
