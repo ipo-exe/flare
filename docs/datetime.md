@@ -1,6 +1,6 @@
-# Date and time
+# Date and Time
 
-Date and time (**datetime**) is a fundamental **domain** in Flare, since nearly all other domains of asset labeling require temporal reference.
+Date and Time (**datetime**) is a fundamental **domain** in Flare, since nearly all other domains of asset labeling require temporal reference.
 To cover different use cases, Flare provides two main **subdomains** of temporal encoding:
 
 - **Timestamps** -- instant records of the timeline.
